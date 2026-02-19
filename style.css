@@ -1,0 +1,659 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #1a1a1a;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+/* Верхняя черная полоса */
+.top-stripe {
+    background-color: #2d2d2d;
+    color: white;
+    padding: 12px 0;
+    border-bottom: 2px solid #444;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Левая часть с брендом */
+.brand {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-title {
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: white;
+    line-height: 1.2;
+}
+
+.sub-title {
+    font-size: 15px;
+    color: #cccccc;
+}
+
+/* Правая часть с навигацией */
+.nav-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #ff6b6b;
+}
+
+/* Кнопка входа в красном круге */
+.login-button {
+    width: 40px;
+    height: 40px;
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
+}
+
+.login-button:hover {
+    background-color: #ff5252;
+    transform: scale(1.08);
+}
+
+/* Основной контент - слайдер */
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 0;
+    position: relative;
+}
+
+/* Контейнер слайдера */
+.slider-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.slider-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    height: 450px;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Кнопки навигации слайдера */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 55px;
+    height: 55px;
+    background-color: #ff6b6b;
+    color: white;
+    border: 2.5px solid white;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    z-index: 20;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.slider-btn:hover {
+    background-color: #ff5252;
+    transform: translateY(-50%) scale(1.08);
+    box-shadow: 0 6px 18px rgba(255, 107, 107, 0.6);
+}
+
+.prev-btn {
+    left: 15px;
+}
+
+.next-btn {
+    right: 15px;
+}
+
+/* Точки-индикаторы */
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.dot {
+    width: 14px;
+    height: 14px;
+    background-color: #555;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 1px solid transparent;
+}
+
+.dot:hover {
+    background-color: #888;
+    transform: scale(1.15);
+}
+
+.dot.active {
+    background-color: #ff6b6b;
+    transform: scale(1.15);
+    box-shadow: 0 0 12px #ff6b6b;
+    border-color: white;
+}
+
+/* Нижняя черная полоса */
+.bottom-stripe {
+    background-color: #2d2d2d;
+    padding: 15px 0;
+    border-top: 2px solid #444;
+    margin-top: auto;
+}
+
+.bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Кнопка скачать PDF */
+.pdf-button {
+    background-color: transparent;
+    color: white;
+    border: 2px solid #ff6b6b;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s;
+}
+
+.pdf-button:hover {
+    background-color: #ff6b6b;
+    border-color: #ff6b6b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
+}
+
+.pdf-button i {
+    font-size: 18px;
+}
+
+/* Кнопка корзины */
+.cart-button {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.3s;
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
+}
+
+.cart-button:hover {
+    background-color: #ff5252;
+    transform: scale(1.08);
+    box-shadow: 0 6px 16px rgba(255, 107, 107, 0.6);
+}
+
+.cart-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background-color: white;
+    color: #ff6b6b;
+    font-size: 12px;
+    font-weight: bold;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ff6b6b;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== МОДАЛЬНЫЕ ОКНА ===== */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: #2d2d2d;
+    color: white;
+    width: 90%;
+    max-width: 450px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 0 2px #ff6b6b;
+    animation: modalFadeIn 0.3s;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-header {
+    padding: 20px 25px;
+    border-bottom: 2px solid #444;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    font-size: 24px;
+    color: #ff6b6b;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.modal-header h2 i {
+    font-size: 22px;
+}
+
+.close-modal {
+    font-size: 32px;
+    font-weight: bold;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.3s;
+    line-height: 1;
+}
+
+.close-modal:hover {
+    color: #ff6b6b;
+}
+
+.modal-body {
+    padding: 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #ccc;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.form-group label i {
+    color: #ff6b6b;
+    margin-right: 8px;
+    width: 20px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: #3d3d3d;
+    border: 2px solid #444;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #ff6b6b;
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.2);
+}
+
+.form-group input::placeholder {
+    color: #777;
+}
+
+/* Для полей в одной строке */
+.form-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 0;
+}
+
+.form-group.half {
+    flex: 1;
+}
+
+/* Подсказка для пароля */
+.password-hint {
+    display: block;
+    color: #888;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Чекбокс */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+    accent-color: #ff6b6b;
+    transform: scale(1.2);
+}
+
+.checkbox-group label {
+    margin: 0;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.checkbox-group a {
+    color: #ff6b6b;
+    text-decoration: none;
+}
+
+.checkbox-group a:hover {
+    text-decoration: underline;
+}
+
+/* Кнопка отправки */
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #ff5252;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+}
+
+.submit-btn i {
+    font-size: 18px;
+}
+
+.modal-footer {
+    padding: 15px 25px 25px;
+    text-align: center;
+    border-top: 1px solid #444;
+}
+
+.modal-footer p {
+    color: #ccc;
+    font-size: 15px;
+    margin: 8px 0;
+}
+
+.modal-footer a {
+    color: #ff6b6b;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.modal-footer a:hover {
+    color: #ff5252;
+    text-decoration: underline;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+    
+    .brand {
+        align-items: center;
+    }
+    
+    .main-title {
+        font-size: 24px;
+    }
+    
+    .sub-title {
+        font-size: 14px;
+    }
+    
+    .nav-section {
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+    }
+    
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .nav-menu a {
+        font-size: 16px;
+    }
+    
+    .login-button {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+    }
+    
+    .slider-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+        border-width: 2px;
+    }
+    
+    .prev-btn {
+        left: 8px;
+    }
+    
+    .next-btn {
+        right: 8px;
+    }
+    
+    .slide {
+        height: 300px;
+    }
+    
+    .slider-dots {
+        margin-top: 15px;
+    }
+    
+    .dot {
+        width: 12px;
+        height: 12px;
+    }
+    
+    .bottom-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .pdf-button {
+        width: 100%;
+        justify-content: center;
+        padding: 10px 18px;
+        font-size: 15px;
+    }
+    
+    .cart-button {
+        width: 44px;
+        height: 44px;
+        font-size: 18px;
+    }
+    
+    /* Модальные окна на мобильных */
+    .modal-content {
+        width: 95%;
+        max-width: none;
+        margin: 20px;
+    }
+    
+    .modal-header h2 {
+        font-size: 20px;
+    }
+    
+    .modal-body {
+        padding: 20px;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .form-group.half {
+        margin-bottom: 20px;
+    }
+    
+    .form-group.half:last-child {
+        margin-bottom: 0;
+    }
+    
+    .form-group input {
+        padding: 10px 12px;
+        font-size: 15px;
+    }
+    
+    .submit-btn {
+        padding: 12px;
+        font-size: 16px;
+    }
+    
+    .checkbox-group {
+        flex-wrap: wrap;
+    }
+    
+    .checkbox-group label {
+        font-size: 13px;
+    }
+}
+
+/* Для ноутбуков */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .slider-container {
+        max-width: 900px;
+    }
+    
+    .slide {
+        height: 400px;
+    }
+    
+    .slider-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 22px;
+    }
+}
